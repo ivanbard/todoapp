@@ -18,3 +18,13 @@ class TaskCreate(CreateView):
     model = Task
     fields = '__all__'
     success_url = reverse_lazy('tasks') #send user back to their list after successful creation of task
+
+class TaskUpdate(UpdateView):
+    model = Task
+    fields = '__all__'
+    success_url = reverse_lazy('tasks')
+
+class DeleteView(DeleteView):
+    model = Task
+    context_object_name = 'task'
+    success_url = reverse_lazy('tasks')
